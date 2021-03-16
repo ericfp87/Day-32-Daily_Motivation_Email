@@ -1,8 +1,10 @@
 import smtplib
 import datetime as dt
-import pandas as pd
 import random
 
+
+MY_EMAIL = "teste@gmail.com"
+MY_PASSWORD = "teste"
 
 #E-mail
 # my_email = "appbreweryinfo@gmail.com"
@@ -27,8 +29,7 @@ if weekday == 1:
     with open("quotes.txt") as quote_file:
         all_quotes = quote_file.readlines()
         quote = random.choice(all_quotes)
-MY_EMAIL = "teste@gmail.com"
-MY_PASSWORD = "teste"
+
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
         connection.login(MY_EMAIL, MY_PASSWORD)
